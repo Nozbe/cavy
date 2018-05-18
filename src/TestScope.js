@@ -55,7 +55,7 @@ export default class TestScope {
         console.log(successMsg);
         testResults.push({message: successMsg, passed: true});
       } catch (e) {
-        let errorMsg = `${description}  ❌\n   ${e.message}`;
+        let errorMsg = `${description}  ❌\n   ${e.message}\n   Stacktrace: ${e.stack}`;
 
         console.warn(errorMsg);
         testResults.push({message: errorMsg, passed: false});
