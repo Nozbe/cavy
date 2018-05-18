@@ -83,6 +83,7 @@ export default class TestScope {
   sendReport(report) {
     if (this.customReporter) {
       this.customReporter(report);
+      return;
     }
 
     const url = 'http://127.0.0.1:8082/report';
