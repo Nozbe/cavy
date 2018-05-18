@@ -70,7 +70,7 @@ export default class Tester extends Component {
 
   async runTests() {
     const scope = new TestScope(this, this.props.waitTime, this.props.startDelay,
-      this.props.sendReport);
+      this.props.sendReport, this.props.customReporter);
     for (var i = 0; i < this.props.specs.length; i++) {
       await this.props.specs[i](scope);
     }
@@ -107,7 +107,8 @@ Tester.propTypes = {
   waitTime: PropTypes.number,
   startDelay: PropTypes.number,
   clearAsyncStorage: PropTypes.bool,
-  sendReport: PropTypes.bool
+  sendReport: PropTypes.bool,
+  customReporter: PropTypes.function
 };
 
 Tester.childContextTypes = {
